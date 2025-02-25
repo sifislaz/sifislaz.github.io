@@ -1,0 +1,21 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    /* background-color: #3d4b52; */
+    background-color: #0c0f10;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+i{
+    color:#fff;
+    font-size: 2em;
+}
+
+img{
+    width: 25%;
+    height: auto;
+    border-radius: 50%;
+    float:right;
+    margin: 0 0 20px 20px;
+}
