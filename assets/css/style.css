@@ -4,10 +4,10 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     line-height: 1.6;
-    /* color: rgba(255, 255, 255, 0.8); */
     color: #e7f5dee5;
     /*Background*/
-    background-color: #0c0f10;
+    background: url("../img/bg2.png");
+    backdrop-filter: blur(1.5px);
 }
 
 /*Header Styling*/
@@ -44,6 +44,7 @@ i {
 .profile-pic {
     width: 18%;
     height: auto;
+    min-width: 120px;
     border-radius: 50%;
     float: right;
     margin: 0 0 20px 20px;
@@ -89,4 +90,5 @@ a:hover {
     padding: 20px;
     box-shadow: -0.15em 0.15em 0.1em #e7f5deAA;
     margin-bottom: 2.5em;
+    background-color: #0c0f10;
 }
