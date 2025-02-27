@@ -7,15 +7,44 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
-i{
-    color:#fff;
-    font-size: 2em;
+
+h1{
+    color:#e7f5de;
 }
 
-img{
-    width: 20%;
+i {
+    color: #fff;
+    font-size: 1em;
+}
+
+img {
+    width: 18%;
     height: auto;
     border-radius: 50%;
-    float:right;
+    float: right;
     margin: 0 0 20px 20px;
+}
+
+
+footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+.tooltip {
+    --bs-tooltip-bg: #e7f5de;
+    --bs-tooltip-color: #0c0f10;
+    --bs-tooltip-opacity: 0.8;
+
+}
+
+@counter-style coding-list{
+    system:fixed;
+    symbols: "\1f468\200d\1f4bb" "\1f4ca" "\1f512" "\1F5A7 ";
+    suffix:" ";
+}
+
+.interests-list{
+    list-style-type: coding-list;
 }
