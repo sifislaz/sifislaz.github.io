@@ -28,8 +28,8 @@
 
 <body>
     <!--Navbar-->
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Navigation Bar">
+    <header class="sticky-top">
+        <nav id="navbar" class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark" aria-label="Navigation Bar">
             <div class="container-fluid justify-content-end">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
                     aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,12 +37,26 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarMenu">
-                    <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                    <ul class="navbar-nav nav nav-pills me-auto mb-2 mb-sm-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">About Me</a>
+                            <a class="nav-link" href="#aboutMeSpy">About Me</a>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-expanded="false">Thesis</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item nav-link" href="#thesisContribSpy">Key Contributions</a>
+                                </li>
+                                <li><a class="dropdown-item nav-link" href="#thesisPerformanceSpy">Performance
+                                        Evaluation</a></li>
+                                <li><a class="dropdown-item nav-link" href="#thesisSecuritySpy">Security Aspects</a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true" href="/assets/pdf/cv.pdf">CV</a>
+                            <a class="disabled nav-link" aria-disabled="true" href="/assets/pdf/cv.pdf">CV</a>
                         </li>
                     </ul>
                 </div>
@@ -50,17 +64,18 @@
         </nav>
     </header>
     <!--Main Content-->
-    <div class="container mt-5 main-body">
+    <div class="container mt-5 scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar"
+        data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
         <!-- About Me -->
-        <div class="row">
+        <div class="row content-card">
             <div class="col-12">
                 <article>
-                    <img src="assets/img/IMG_2718.jpg" alt="Profile Picture">
-                    <h1>Iosif (Sifis) Lazanakis</h1>
+                    <img class="profile-pic" src="assets/img/IMG_2718.jpg" alt="Profile Picture">
+                    <h1 id="aboutMeSpy">Iosif (Sifis) Lazanakis</h1>
                     <p>
                         Hi, I am Iosif, but most people know me as <em>Sifis</em>.<br>
                         I hold an Integrated Master's Diploma in Electrical and Computer Engineer from the <a
-                            href="https://www.upatras.gr">University of Patras</a>.
+                            target="_blank" href="https://www.upatras.gr">University of Patras</a>.
                         My diploma thesis was on the topic of <em>Privacy Preservation on Biometric User Authentication
                             Systems</em>, where I developed a system that uses Homomorphic Encryption to protect the
                         user's fingerprint reference template.
@@ -75,8 +90,7 @@
                     </ul>
                     </p>
                     <p>
-                        I am currently serving my mandatory military service in the Hellenic Army, as a member of the IT
-                        Support Center Company of the CIS Battalion of Hellenic National Defence General Staff, and I
+                        I am currently serving my mandatory military service in the Hellenic Army, and I
                         expect to be discharged by mid-September 2025.<br>
                     </p>
                     <p>
@@ -88,13 +102,78 @@
                 </article>
             </div>
         </div>
-        <div class="row">
-            
+        <!-- Thesis Summary -->
+        <div class="row content-card" id="thesis">
+            <div class="col-12">
+                <article>
+                    <h1 id="thesisSpy">My Diploma Thesis Summary</h1>
+                    <p>
+                        In my diploma thesis, I developed a biometric authentication system that utilizes fingerprint
+                        recognition for user identity verification. To protect the stored biometric templates, I
+                        implemented Paillier's Cryptosystem, a partially homomorphic encryption scheme, ensuring robust
+                        security for sensitive data.
+                    </p>
+                    <h4 id="thesisContribSpy">Key Contributions:</h4>
+                    <ul>
+                        <li>
+                            <strong>Key Generation: </strong>I generated a user-specific public/private key pair to
+                            enhance security during the authentication process.
+                        </li>
+                        <li>
+                            <strong>Fingerprint Template Construction: </strong>The system employed three fingerprint
+                            samples to create a comprehensive reference template. I extracted minutiae points from each
+                            sample, calculated minutiae pairs, and filtered redundant pairs to ensure accuracy.
+                        </li>
+                        <li>
+                            <strong>Binary Vector Representation: </strong>The selected minutiae pairs were converted
+                            into a binary format and hashed into a unified vector, which was then encrypted using the
+                            user’s public key to safeguard the biometric information.
+                        </li>
+                    </ul>
+                    <h4 id="thesisPerformanceSpy">Performance Evaluation:</h4>
+                    <p>
+                        I evaluated the system's performance using the "Neurotechnology CrossMatch DB" dataset, which
+                        contains 51 unique fingerprints, each with 8 associated samples (totaling 408 samples). For each
+                        fingerprint:
+                    </p>
+                    <ul>
+                        <li>A reference template was constructed using the initial three samples.</li>
+                        <li>These templates were then compared against the remaining five samples of the same
+                            fingerprint and the eight samples from the other 50 fingerprints.</li>
+                        <li>This analysis resulted in 255 correct comparisons and 20,400 false comparisons.</li>
+                    </ul>
+                    <h5>Results:</h5>
+                    <ul>
+                        <li>
+                            I plotted Receiver Operating Characteristic (ROC) curves, achieving an Equal Error Rate
+                            (EER) of 16%. This EER was consistent for both encrypted and unencrypted templates.
+                        </li>
+                        <li>
+                            The registration process took approximately 3.5 hours on a high-performance computing
+                            system, while the verification process was completed in just
+                            2.3 seconds.
+                        </li>
+                    </ul>
+                    <h4 id="thesisSecuritySpy">Security Aspects:</h4>
+                    <p>
+                        The security of the biometric authentication system is fundamentally reliant on the key
+                        length of the Paillier Cryptosystem. Utilizing a key length of 3072 bits, I provided 128
+                        bits of entropy, making it computationally infeasible to reverse-engineer the encryption
+                        with current technology. The system's security is based on the Decisional Composite
+                        Residuosity Assumption, ensuring a robust defense against potential attacks.
+                    </p>
+                    <p>
+                        If you want to learn more about my diploma thesis, click <a target="_blank"
+                            href="https://hdl.handle.net/10889/26836">here</a>
+                    </p>
+                </article>
+            </div>
         </div>
+
     </div>
     <!--Footer-->
     <footer class="container-fluid bg-dark py-3">
-        <div class="d-flex justify-content-sm-evenly">
+        <div class="d-flex justify-content-evenly">
             <div class="row">
                 <div class="col-12">
                     <div class="row">
@@ -102,13 +181,14 @@
                                 data-bs-title="Send me an Email!" data-bs-custom-class="tooltip"><i
                                     class="fas fa-envelope"></i></a></div>
                         <div class="col"><a href="https://www.linkedin.com/in/iosif-lazanakis/" data-bs-toggle="tooltip"
-                            data-bs-title="Let's Connect!" data-bs-custom-class="tooltip"><i
+                                data-bs-title="Let's Connect!" data-bs-custom-class="tooltip"><i
                                     class="fab fa-linkedin"></i></a></div>
                         <div class="col"><a href="https://github.com/sifislaz" data-bs-toggle="tooltip"
-                            data-bs-title="Check my Projects!" data-bs-custom-class="tooltip"><i class="fab fa-github"></i></a></div>
-                        <div class="col"><a href="https://discordapp.com/users/623131738268499988" data-bs-toggle="tooltip"
-                            data-bs-title="Send me a message!" data-bs-custom-class="tooltip"><i
-                                    class="fab fa-discord"></i></a></div>
+                                data-bs-title="Check my Projects!" data-bs-custom-class="tooltip"><i
+                                    class="fab fa-github"></i></a></div>
+                        <div class="col"><a href="https://discordapp.com/users/623131738268499988"
+                                data-bs-toggle="tooltip" data-bs-title="Send me a message!"
+                                data-bs-custom-class="tooltip"><i class="fab fa-discord"></i></a></div>
                     </div>
                 </div>
             </div>

@@ -1,23 +1,47 @@
+/* Set the body styling */
 body {
+    /* Font styling*/
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     line-height: 1.6;
-    /* background-color: #3d4b52; */
+    /* color: rgba(255, 255, 255, 0.8); */
+    color: #e7f5dee5;
+    /*Background*/
     background-color: #0c0f10;
-    color: rgba(255, 255, 255, 0.8);
 }
 
+/*Header Styling*/
 
-h1{
-    color:#e7f5de;
+header .navbar .nav-link {
+    color: #e7f5dee5 !important;
+}
+
+header .navbar .nav-link:hover {
+    color: #e7f5deab !important;
+}
+
+header .navbar .nav-link.active {
+    color: #e7f5de !important;
+    background-color: #e7f5dea2 !important;
+    border-radius: 1em;
+}
+
+header .navbar .nav-link.disabled {
+    color: #6c757d !important;
+}
+
+/*Main Body Styling*/
+
+h1 {
+    color: #e7f5de;
 }
 
 i {
-    color: #fff;
+    color: #e7f5de;
     font-size: 1em;
 }
 
-img {
+.profile-pic {
     width: 18%;
     height: auto;
     border-radius: 50%;
@@ -25,12 +49,18 @@ img {
     margin: 0 0 20px 20px;
 }
 
+/*Change link colors*/
 
-footer{
-    position:fixed;
-    bottom:0;
-    width:100%;
+a {
+    color: #A6D8A1;
+    text-decoration: none;
 }
+
+a:hover {
+    color: #a5d8a1c5;
+}
+
+/*Modify the colors for the bootstrap tooltip*/
 
 .tooltip {
     --bs-tooltip-bg: #e7f5de;
@@ -39,12 +69,24 @@ footer{
 
 }
 
-@counter-style coding-list{
-    system:fixed;
+
+/* Configure a special list style for the interests */
+@counter-style coding-list {
+    system: fixed;
     symbols: "\1f468\200d\1f4bb" "\1f4ca" "\1f512" "\1F5A7 ";
-    suffix:" ";
+    suffix: " ";
 }
 
-.interests-list{
+.interests-list {
     list-style-type: coding-list;
+}
+
+/*Change the styling of each webpage tab*/
+
+.content-card {
+    border: 1px solid #292e33;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: -0.15em 0.15em 0.1em #e7f5deAA;
+    margin-bottom: 2.5em;
 }
