@@ -68,11 +68,12 @@
     <div class="container mt-5 scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar"
         data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
         <!-- About Me -->
+         <h1 class="text-center">Iosif (Sifis) Lazanakis</h1>
         <div class="row content-card">
             <div class="col-12">
                 <article>
                     <img class="profile-pic" src="assets/img/IMG_2718.jpg" alt="Profile Picture">
-                    <h1 id="aboutMeSpy">Iosif (Sifis) Lazanakis</h1>
+                    <h2 id="aboutMeSpy">About Me</h2>
                     <p>
                         Hi, I am Iosif, but most people know me as <em>Sifis</em>.<br>
                         I hold an Integrated Master's Diploma in Electrical and Computer Engineer from the <a
@@ -83,7 +84,7 @@
                     </p>
                     <p>My main interests are focused on Computer Science and Computer Engineering topics, with a
                         preference in:
-                    <ul class="interests-list">
+                    <ul>
                         <li>Software Engineering</li>
                         <li>Data Science</li>
                         <li>Privacy Preservation</li>
@@ -107,7 +108,7 @@
         <div class="row content-card" id="thesis">
             <div class="col-12">
                 <article>
-                    <h1 id="thesisSpy">My Diploma Thesis Summary</h1>
+                    <h2 id="thesisSpy">My Diploma Thesis Summary</h2>
                     <p>
                         In my diploma thesis, I developed a biometric authentication system that utilizes fingerprint
                         recognition for user identity verification. To protect the stored biometric templates, I
@@ -201,5 +202,4 @@
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
-<script src="/assets/js/background.js"></script>
 </html>
