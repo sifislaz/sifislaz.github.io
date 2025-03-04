@@ -81,3 +81,7 @@ a:hover {
     margin-bottom: 2.5em;
     background-color: #0c0f10;
 }
+
+footer{
+    position:initial;
+}
