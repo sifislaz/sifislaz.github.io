@@ -6,7 +6,7 @@ addEventListener('DOMContentLoaded', () => {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     for (let tooltip of tooltipTriggerList) {
         topOffset = tooltip.offsetTop;
-        tooltip.setAttribute('data-bs-offset', `[0,${topOffset - 880}]`);
+        tooltip.setAttribute('data-bs-offset', `[0,${topOffset - 834}]`);
     }
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
